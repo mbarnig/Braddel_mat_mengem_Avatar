@@ -1,2 +1,2 @@
-# Speak with my Avatar
+# Braddel mat mengem Avatar
 ![speak with my avatar](./public/swma.png)
