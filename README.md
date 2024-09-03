@@ -10,4 +10,5 @@ npm install
 npm run dev
 ```
 Display the application in your browser at localhost:7860     
-If the port is already running, stop it with `npx kill-port5 7860`.      
+If the port is already running, stop it with `npx kill-port 7860`.      
+If an error is thrown at session start, check if files or folders which should be ignored in the git (for example folder schreifmaschinn) are not present in the local project folder.    
