@@ -43,7 +43,8 @@ export default function InteractiveAvatarChat() {
   const avatar = useRef<StreamingAvatarApi | null>(null);
   const mediaRecorder = useRef<MediaRecorder | null>(null);
   const audioChunks = useRef<Blob[]>([]);
-  const { input, setInput, handleSubmit } = useChat({
+  const [response, setResponse] = useState(null); 
+  const [file, setFile] = useState(null);  const { input, setInput, handleSubmit } = useChat({
     onFinish: async (message) => {
       console.log("ChatGPT Response:", message);
       setAnswer(message.content);
