@@ -273,10 +273,28 @@ export default function InteractiveAvatarChat() {
       const audioFile = new File([audioBlob], "recording.wav", {
         type: "audio/wav",
       });
+
+      /*
       const response = await openai.audio.transcriptions.create({
         model: "whisper-1",
         file: audioFile,
       });
+      */
+
+        const [response, setResponse] = useState(null);        
+        const formData = new FormData();
+        formData.append('audioFile', file);      
+        const res = await fetch('https://leonie.schreifmaschinn.lu/api/v1/listen', {
+        method: 'POST',
+        headers: {
+          'accept': 'application/json',
+        },
+        body: formData,
+        });
+
+      const data = await res.json();
+      setResponse(data);      
+      
       const transcription = response.text;
       console.log("Transcription: ", transcription);
       setInput(transcription);
