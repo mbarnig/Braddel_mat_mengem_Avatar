@@ -10,3 +10,4 @@ npm install
 npm run dev
 ```
 Display the application in your browser at localhost:7860     
+If the port is already running, stop it with `npx kill-port5 7860`.      
